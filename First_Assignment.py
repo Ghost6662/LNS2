@@ -105,6 +105,7 @@ class Person:
         self.hunger = 0
         self.hunger_increase = 50
         self.book_number = 200
+        self.count = 0
     def __str__(self):
         return "Name:{} ->> Power:{}, Thirst:{}, Hunger:{}, Book Number:{}".format(self.name, self.power, self.thirst, self.hunger, self.book_number)
     def readbook(self,pers):
@@ -112,7 +113,8 @@ class Person:
         pers.thirst = pers.thirst - self.thirst_reduce
         pers.hunger = pers.hunger + self.hunger_increase
         pers.book_number -= 1
-        print("After one reading session {} has {} power left, his thirst Level reduces to {}, Hunger level increases {}, and {} books left").format(self.name, self.power, self.thirst, self.hunger, self.book_number)
+        pers.count += 1
+        print("After {} reading session {} has {} power left, his thirst Level reduces to {}, Hunger level increases {}, and {} books left").format(self.count, self.name, self.power, self.thirst, self.hunger, self.book_number)
     def relax (self, pers):
         pers.power = 90
         pers.thirst = pers.thirst + 20
@@ -131,4 +133,12 @@ print ("\n")
 
 First_Reader.relax(First_Reader)
 print(First_Reader)
+print ("\n")
+
+for i in range(1, 3):
+    First_Reader.readbook(First_Reader)
+    print(First_Reader)
+    print ("\n")
+
+
 
