@@ -139,6 +139,3 @@ for i in range(1, 3):
     First_Reader.readbook(First_Reader)
     print(First_Reader)
     print ("\n")
-
-
-
