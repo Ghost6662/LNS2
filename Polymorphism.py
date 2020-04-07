@@ -8,7 +8,7 @@ class Living_Being_Type:
         return "{} is a {}".format(self.name, self.type)
 class Human(Living_Being_Type):
     def talk(self):
-        return "Hello World"
+        return "Hello World!"
 class Dog(Living_Being_Type):
     def talk(self):
         return "Woof!"
