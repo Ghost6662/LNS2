@@ -1,10 +1,11 @@
+from PIL import Image, ImageTk
 import datetime
 import tkinter as tk
 
 # Creating Window
 
 window = tk.Tk()
-window.geometry("400x400")
+window.geometry("350x350")
 window.title("Age Calculator App")
 
 # Creating Labels
@@ -62,6 +63,12 @@ class Person:
         age = today.year - self.birthdate.year
         return age
 
+
+image = Image.open('/Users/ghost/Desktop/LNS/Logo.jpg')
+image.thumbnail((100, 100), Image.ANTIALIAS)
+photo = ImageTk.PhotoImage(image)
+label_image = tk.Label(image=photo)
+label_image.grid(column=1, row=0)
 
 # Emil = Person("Emil", datetime.date(1995, 11, 06))
 # print(Emil.birthdate)
